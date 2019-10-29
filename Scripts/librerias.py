@@ -1,4 +1,6 @@
 import math
+import urllib
+
 print(math.pi)
 
 import random
@@ -17,8 +19,12 @@ from datetime import date
 hoy=date.today()
 print(hoy)
 
-with urlib.request.urlopen("http://wwww.codigo.edu.pe") as url:
+with urllib.request.urlopen("http://wwww.codigo.edu.pe") as url:
     s=url.red()
     print(s)
 
 
+from openpyxl import load_workbook
+wb = load_workbook(filename="D:data.xlsx")
+sheet_ranges=wb['informacion']
+print(sheet_ranges['B4'].value)
